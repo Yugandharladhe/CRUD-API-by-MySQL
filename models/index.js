@@ -2,6 +2,7 @@ const dbConfig=require("../config/dbConfig")
 const {Sequelize,DataTypes}=require("sequelize")
 
 const sequelize=new Sequelize(
+    //database configurarations
     dbConfig.DB,
     dbConfig.USER,
     dbConfig.PASSWORD,
@@ -30,9 +31,11 @@ const db={}
 db.Sequelize=Sequelize
 db.sequelize=sequelize
 
+//create table of employee
 db.employees=require("./employee")(sequelize,DataTypes)
 
 
+//if table is not exist then it will auto create table
 db.sequelize.sync({force:false}).then(()=>{
     console.log("sync is done")
 }).catch(()=>{

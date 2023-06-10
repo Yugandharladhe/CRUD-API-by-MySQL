@@ -7,6 +7,7 @@ const employee=db.employees
 //main work
 
 const addEmployee=async(req,res)=>{
+    //inputs from end user
     const {id,jobtitle,
         phonenumber,
         email,
@@ -31,12 +32,13 @@ const addEmployee=async(req,res)=>{
             relationshipSec
         }
 
-        
+        // add new employee
         const employeeSave=await employee.create(emp)
         res.status(200).send(employeeSave)
     
     }catch(err){
-        res.json({msg:err})
+        // if error occurs
+        res.json({ msg: err }).status(400);
         console.log(err)
     }
     

@@ -22,17 +22,21 @@ module.exports=(sequelize,DataTypes)=>{
         state:{
             type:DataTypes.STRING(350)
         },
+        //primary emergency contact
         contactNoPrim:{
             type:DataTypes.STRING(350),
             allowNull:false
         },
+        //primary contact person's relation with employee
         relationshipPrim:{
             type:DataTypes.STRING(350),
             allowNull:false
         },
+        //secondary emergency contact
         contactNoSec:{
             type:DataTypes.STRING(350)
         },
+        //secondary contact person's relation with employee
         relationshipSec:{
             type:DataTypes.STRING(350)
         }

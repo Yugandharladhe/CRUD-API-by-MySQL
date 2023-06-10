@@ -9,6 +9,7 @@ const employee=db.employees
 const getEmployee=async(req,res)=>{
     const {id}=req.query
     try{
+        //finding employee
         const getEmployee=await employee.findByPk(id)
         if(getEmployee)
         {
@@ -18,7 +19,8 @@ const getEmployee=async(req,res)=>{
         }
         
     }catch(err){
-        res.json({msg:err})
+        //if error occurs
+        res.json({ msg: err }).status(400);
         console.log(err)
     }
     

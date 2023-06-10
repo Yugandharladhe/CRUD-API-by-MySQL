@@ -7,6 +7,7 @@ const employee=db.employees
 //main work
 
 const removeEmployee=async(req,res)=>{
+    //inputs from end user
     const {id,jobtitle=false,
     phonenumber=false,
     email=false,
@@ -37,6 +38,8 @@ const removeEmployee=async(req,res)=>{
                 relationshipSec
             }
             newObj={}
+
+            //here we do seperation which employee dosn't want to update
             for (const key in emp) {
                 if(emp[key]!=false)
                 {
@@ -44,7 +47,7 @@ const removeEmployee=async(req,res)=>{
                 }
             }
 
-                // console.log(newObj)
+                // here we update the record of employee
                 const updatedData=await employee.update(
                 newObj,
                 {where: {id}}
@@ -61,7 +64,7 @@ const removeEmployee=async(req,res)=>{
         }
 
     }catch(err){
-        res.json({msg:err})
+        res.json({ msg: err }).status(400);
         console.log(err)
     }
     
