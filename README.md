@@ -1,6 +1,7 @@
 # CRUD-API-by-MySQL(by Node js)
 1) To download dependencies run 'npm install'
-2)to run project run 'node app.js'
+2) create database as name companyDB
+3) to run project run 'node app.js'
 
 routes:
 1) localhost:3000/createEmployee [POST]
