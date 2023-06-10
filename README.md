@@ -1,4 +1,4 @@
-# CRUD-API-by-MySQL
+# CRUD-API-by-MySQL(by Node js)
 1) To download dependencies run 'npm install'
 2)to run project run 'node app.js'
 
